@@ -1,0 +1,34 @@
+@font-face{font-family:'Extatica Light';src:url("../fonts/Extatica Light.otf")}
+@font-face{font-family:'Extatica Light Italic';src:url("../fonts/Extatica Light Italic.otf")}
+*{margin:0}
+body{background-color:#72A383;font-family:'Extatica Light'}
+header{width:100%}
+header img{height:220px;margin-top:80px}
+.content{width: 100%;height: 100%;}
+.content-va-center{justify-content:center;align-items:center}
+.content-va-bottom>*{vertical-align:bottom}
+.content-ha-center>*{margin-left:auto;margin-right:auto;text-align:center}
+.content-ha-left>*{margin-left:0px;margin-right:auto;text-align:left}
+.content-ha-right>*{margin-left:auto;margin-right:0px;text-align:right}
+.row{display:flex;flex-direction:row}
+.col{display:flex;flex-direction:column}
+.w-100{width:100%}
+header .title{font-family:'Extatica Light Italic';font-size:32px;color:#FCFAE4;position:sticky;top:20px;margin-top:calc(50vh - 330px)}
+header .content{width:100%;height:100vh}
+content{width:100%}
+content .search{border:none;border-radius:25px;font-family:'Tw Cen Extra Bold',serif;text-align:center;outline:none;width:190px;height:50px;font-size:calc(57px / 2);margin:100px 100px}
+header .line{width:400px;height:1px;background-color:#FCFAE4}
+content .places-list .place{width:400px;min-height:300px;background-color:#FCFAE4;border:none;border-radius:25px;margin-bottom:50px}
+content .place .title{font-size:25px;margin:20px}
+
+.bird{position:absolute;transition:1s;transition-delay:.5s}
+content .bird:nth-child(1){width:70px;margin-left:10%}
+content .bird:nth-child(2){width:35px;margin-left:25%;margin-top:400px}
+content .bird:nth-child(3){width:20px;margin-left:20%;margin-top:450px}
+content .content+.bird{width:55px;margin-left:70%;margin-top:-100px}
+
+.bird.hidden{opacity:0}
+.bird.visible{opacity:1}
+
+.place .objects-list{margin:20px}
+.place .info{margin:20px}

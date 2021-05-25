@@ -1,0 +1,112 @@
+/* Tw_new     */ @font-face{font-family:'Tw_new';src:url("../fonts/Tw Cen MT Condensed Extra Bold.ttf")}
+/* Myriad Pro */ @font-face{font-family:'Myriad Pro';src:url("../fonts/myriadpro-regular.ttf")}
+*{margin:0}
+body{background-color:#292841}
+.as-display{width:100vw;height:100vh}
+.display-flex{display:flex}
+.full-space{width:100%;height:100%}
+.content-va-center{align-items:center}
+.content-ha-center{justify-content:center;text-align:center}
+.unselectable{user-select:none}
+.row{display:flex;flex-direction:row}
+.col{display:flex;flex-direction:column}
+header,content,footer{width:100%;position:relative}
+header{min-height:110px}
+content{min-height:calc(100vh - 160px)}
+footer{min-height: 50px}
+header .header-menu{width: 70%}
+header .header-user{width: 30%}
+header .header-menu a{font-family:'Tw_new';font-size:24px;color:white;display:inline}
+.header-menu .header-menu-points{width:30%;justify-content:space-between;margin-left:calc(100/70*30%)}
+.header-user .user-img{width:55px;aspect-ratio:1;border-radius:50%;border:none}
+.header-user .user-name{font-family:'Tw_new',serif;font-size:24px;color:white;text-align:right;margin:15px;width:50%;overflow:hidden;text-overflow:ellipsis}
+.game-block{background-color:black;border:none;width:200px;aspect-ratio:1;border-radius:33px}
+.game-block .game-logo{width:50%;aspect-ratio:1;margin-top:12.5%}
+.game-block .game-title{font-family:'Tw_new',serif;color:#2E3E5A;margin-top:18px;font-size:calc(57px/2)}
+footer p{font-family:'Myriad Pro';font-size:14px;color:#DCDDDE;opacity:.2}
+.increasable{transition:.5s}
+.increasable:hover{transform:scale(1.05)}
+
+.room-block{
+    background-color:black;border:none;width:400px;aspect-ratio:2;border-radius:33px
+}
+
+.user-image-block{
+    background-color: white;
+    border:none;
+    border-radius: 28px;
+    width: 150px;
+    aspect-ratio: 1;
+}
+
+/**********************************/
+
+
+.auth-block {
+    background-color: #7CE4CC;
+    border: none;
+    width: 346px;
+    /* height: 285px; */
+    aspect-ratio: 10/8;
+    border-radius: 33px;
+}
+.auth-block .title {
+    font-family: "Tw_new", serif;
+    color: white;
+    margin: -60px auto;
+}
+.auth-block h1.title {
+    font-size: 90px;
+}
+.auth-block h2.title {
+    font-size: 75px;
+}
+.auth-block h3.title {
+    font-size: 60px;
+}
+.auth-block h4.title {
+    font-size: 40px;
+}
+.auth-block h5.title {
+    font-size: 20px;
+}
+.auth-block p {
+    width: 100%;
+    font-family: "Tw_new", serif;
+    font-size: 28.5px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.auth-block p:nth-child(2) {
+    color: #43B581;
+    margin-top: 105px;
+}
+.auth-block p:last-child{
+    font-size:  20px;
+    margin-top: 30px;
+    color: #7CE4CC;
+}
+.auth-block p:last-child a{
+    color: #43B581;
+}
+
+.auth-input {
+    border: none;
+    font-family: "Tw_new", serif;
+    text-align: center;
+    outline: none;
+    width: 190px;
+    height: 51px;
+    border-radius: 22px;
+    font-size: calc(57px / 2);
+    margin: 25px auto;
+}
+
+.auth-block input:required:valid{
+    color: #51538C;
+}
+.auth-block input:required:invalid{ 
+    color: #F25170;
+}
