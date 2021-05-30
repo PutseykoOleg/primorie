@@ -1,0 +1,72 @@
+@font-face{font-family:'Extatica Light';src:url("../fonts/Extatica Light.otf")}
+@font-face{font-family:'Extatica Light Italic';src:url("../fonts/Extatica Light Italic.otf")}
+
+*{margin:0}
+body{background-color:#72A383;font-family:'Extatica Light';text-transform:lowercase}
+
+header{width:100%}
+header .sticky-block{position:sticky;top:20px}
+header .menu{width:200px;transition:.5s;margin:10px auto 0px auto}
+header .menu.hidden{opacity:0}
+header .menu.visible{opacity:1}
+header .menu.hidden .menu-point{cursor:default}
+header .menu.visible .menu-point{cursor:pointer}
+header .menu .menu-point{width:70px;height:20px;border:none;border-radius:10px;background-color:#FCFAE4;color:#72A383}
+header .menu .menu-point.choosed{color:black}
+
+header img{height:220px;margin-top:80px}
+header .title{font-family:'Extatica Light Italic';font-size:32px;color:#FCFAE4;margin-top:calc(50vh - 330px)}
+header .content{width:100%;height:100vh}
+
+.content-va-center{justify-content:center;align-items:center}
+.content-va-bottom>*{vertical-align:bottom}
+.content-ha-center>*{margin-left:auto;margin-right:auto;text-align:center}
+.content-ha-left>*{margin-left:0px;margin-right:auto;text-align:left}
+.content-ha-right>*{margin-left:auto;margin-right:0px;text-align:right}
+.row{display:flex;flex-direction:row}
+.col{display:flex;flex-direction:column}
+
+main{width:100%}
+main .input{font-size:24px;border:none;border-radius:25px;text-align:center;outline:none;display:inline-block;padding-left:20px;padding-right:20px;transition:.5s}
+main .input.search{position:relative;width:150px;height:50px;margin:96px 0px 100px 0px;border:4px #72A383 solid;border-radius:29px;z-index:1;transition:.5s}
+main .settings-img{position:absolute;cursor:pointer;display:inline-block;height:20px;margin:115px 20px;transition:.5s}
+main .input.settings{position:absolute;width:150px;height:50px;margin:100px 20px 100px -191px;text-align:right;background-color:#FCFAE4;z-index:0}
+main .input.settings::placeholder{font-size:16px}
+main .input.settings>*{margin-right:15px}
+main .input.search.action{margin-left:-95px}
+main .settings-img.action{margin-left:115px}
+main .input.settings.action{margin-left:-95px}
+main .places-list .place{width:400px;min-height:300px;background-color:#FCFAE4;border:none;border-radius:25px;margin-bottom:50px}
+main .place .title{font-size:25px;margin:30px}
+main .place .objects-list{margin:20px 30px}
+main .place .actions{position:absolute;width:100%;bottom:0px;right:0px;margin:60px 30px 30px 30px;transition:1s}
+
+main .bird:nth-child(1){width:70px;margin-left:10%}
+main .bird:nth-child(2){width:35px;margin-left:25%;margin-top:400px}
+main .bird:nth-child(3){width:20px;margin-left:20%;margin-top:450px}
+main .content+.bird{width:55px;margin-left:70%;margin-top:-100px}
+
+.content{width: 100%;height: 100%;}
+
+.bird{position:absolute;transition:1s;transition-delay:.5s}
+.bird.hidden{opacity:0}
+.bird.visible{opacity:1}
+
+.btn{cursor:pointer;border:none;border-radius:15px;background-color:black;color:#FCFAE4;padding:5px 15px;transition:1s}
+.map-btn{width:80px;transition:1s}
+.adv-btn{position:sticky;width:147px;top:30px;margin-top:10px;transition:1s}
+
+main .place{position:relative;overflow:hidden}
+main .place .content{width:100%;height:100%;transition:1s}
+main .place.expand .content{margin-top:-100%}
+main .place.expand .actions{bottom:calc(100% - 80px)}
+main .place.expand .map-btn{margin-top:-100px}
+main .place.expand .adv-btn{margin-top:100px}
+main .place .tours-list{position:absolute;margin-top:100%;margin-left:60px;transition:1s}
+main .place .tour{width:100%;margin:20px 0px}
+main .tour .cost{width:105px;font-size:14px;margin-top:10px;padding:6px 10px;color:black;border:3px #72A383 solid;border-radius:16.5px}
+
+main .place.expand .tours-list{margin-top:30px}
+
+.scrollable{width:100%;overflow-x:hidden;overflow-y:scroll}
+/* .tours-scroll{height:calc(100% - 30px);margin-top:30px} */
