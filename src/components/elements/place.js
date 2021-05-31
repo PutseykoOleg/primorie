@@ -1,6 +1,4 @@
-import $ from 'jquery'
 import React from 'react'
-import { GoogleMap, Marker } from 'react-google-maps'
 
 class AdvButton extends React.Component {
     constructor(props){
@@ -44,17 +42,6 @@ class Place extends React.Component {
         })
     }
 
-    // setLocation(){
-    //     if(this.props.instance.location[0] === 'c'){
-    //         let coordinates = new String(this.props.instance.location).split('-')
-
-    //         this.location = {
-    //             lat: coordinates[1],
-    //             lng: coordinates[2]
-    //         }
-    //     }
-    // }
-
     getDuration(tour){
         let durationUnit
         if(tour.duration_unit === 'часы'){
@@ -93,26 +80,24 @@ class Place extends React.Component {
     render(){
         this.setTours()
 
-        return  <div ref={this.ref} class="place content-ha-left">
-                    <div class="content">
-                        <p class="title">{this.props.instance.object_name} <b>{this.props.instance.name}</b></p>
-                        <div class="objects-list">
+        return  <div ref={this.ref} className="place content-ha-left">
+                    <div className="content">
+                        <p className="title">{this.props.instance.object_name} <b>{this.props.instance.name}</b></p>
+                        <div className="objects-list scrollable">
                             {this.props.instance.objects?.map(object =>
                                 <h4>{object.name}</h4>
                             )}
                         </div>
-                        <div class="actions content-ha-right">
-                            <div class="btn map-btn content-ha-center"><p>на карте</p></div>
+                        <div className="actions content-ha-right">
+                            {/* <div class="btn map-btn content-ha-center"><p>на карте</p></div> */}
                             <AdvButton placeRef={this.ref} hasTours={this.tours.length === 0 ? false : true}></AdvButton>
-                            <div className="scrollable tours-scroll">
-                                <div id="tours-list" class="tours-list content-ha-left">
-                                    {this.tours.map(tour =>
-                                        <div className="tour">
-                                            <b>{tour.name}</b>
-                                            <div className="cost">{tour.cost}₽ / {this.getDuration(tour)}</div>
-                                        </div>
-                                    )}
-                                </div>
+                            <div id="tours-list" class="tours-list content-ha-left scrollable">
+                                {this.tours.map(tour =>
+                                    <div className="tour">
+                                        <b>{tour.name}</b>
+                                        <div className="cost">{tour.cost}₽ / {this.getDuration(tour)}</div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
