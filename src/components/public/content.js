@@ -25,6 +25,10 @@ class Content extends React.Component {
                                         onChangeSettings={this.handleChange_Settings} 
                                         onClickSettings={this.handleClick_Settings}>
                         </SearchPage>
+
+            case 'about': 
+                return  <AboutPage></AboutPage>
+
             default: return null
         }
     }

@@ -7,6 +7,7 @@ class Menu extends React.Component{
     constructor(props){
         super(props)
         this.ref = React.createRef()
+        this.state={classes:'menu row content-ha-center visible'}
         this.handleScroll = this.handleScroll.bind(this)
         this.handleClick_AboutBtn = this.handleClick_AboutBtn.bind(this)
         this.handleClick_AdvBtn = this.handleClick_AdvBtn.bind(this)
@@ -18,22 +19,11 @@ class Menu extends React.Component{
 
         let elemTop = 0
         let elemHeight = 0
-
-        if(getCurrentPage() === 'search'){
-            elemTop = $('#search-input').offset().top
-            elemHeight = $('#search-input').outerHeight()
-        } 
-        if(getCurrentPage() === 'about'){
-            elemTop = 0
-            elemHeight = 0
-        }
     
         if(windowTop + windowHeight >= elemTop && windowTop + windowHeight - elemHeight * 2 <= elemTop + windowHeight - elemHeight){
-            ReactDOM.findDOMNode(this).classList.remove('hidden')
-            ReactDOM.findDOMNode(this).classList.add('visible')
+            this.setState({classes:'menu row content-ha-center visible'})
         } else {
-            ReactDOM.findDOMNode(this).classList.remove('visible')
-            ReactDOM.findDOMNode(this).classList.add('hidden')
+            this.setState({classes:'menu row content-ha-center hidden'})
         }
 
         this.forceUpdate()
@@ -79,7 +69,7 @@ class Menu extends React.Component{
     }
 
     render(){
-        return  <nav ref={this.ref} className="menu row content-ha-center hidden">
+        return  <nav ref={this.ref} className={this.state.classes}>
                     <div className="menu-point" id="about-btn" onClick={this.handleClick_AboutBtn}><b>о крае</b></div>
                     <div className="menu-point choosed" id="adv-btn" onClick={this.handleClick_AdvBtn}><b>места</b></div>
                 </nav>

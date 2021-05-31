@@ -25,16 +25,17 @@ header .content{width:100%;height:100vh}
 .row{display:flex;flex-direction:row}
 .col{display:flex;flex-direction:column}
 
+/* Search page */
 main{width:100%}
 main .input{font-size:24px;border:none;border-radius:25px;text-align:center;outline:none;display:inline-block;padding-left:20px;padding-right:20px;transition:.5s}
-main .input.search{position:relative;width:150px;height:50px;margin:96px 0px 100px 0px;border:4px #72A383 solid;border-radius:29px;z-index:1;transition:.5s}
-main .settings-img{position:absolute;cursor:pointer;display:inline-block;height:20px;margin:115px 20px;transition:.5s}
-main .input.settings{position:absolute;width:150px;height:50px;margin:100px 20px 100px -191px;text-align:right;background-color:#FCFAE4;z-index:0}
+main .inputs{width: 198px;}
+main .input.search{width:150px;height:50px;margin:96px 0px 100px 0px;border:4px #72A383 solid;border-radius:29px;z-index:1;transition:.5s}
+main .settings-img{cursor:pointer;display:inline-block;height:20px;margin:115px auto 115px 0px;transition:.5s}
+main .input.settings{width:150px;height:50px;margin:100px 20px 100px -194px;text-align:right;background-color:#FCFAE4;z-index:0}
 main .input.settings::placeholder{font-size:16px}
 main .input.settings>*{margin-right:15px}
-main .input.search.action{margin-left:-95px}
-main .settings-img.action{margin-left:115px}
-main .input.settings.action{margin-left:-95px}
+main .input.search.action{margin-left:-55px}
+main .input.settings.action{margin-left:-89px}
 main .place{position:relative;overflow:hidden;width:400px;min-height:300px;background-color:#FCFAE4;border:none;border-radius:25px;margin-bottom:50px}
 main .place .content{width:100%;height:100%;transition:1s}
 main .place .title{font-size:25px;margin:30px}
@@ -42,21 +43,23 @@ main .place .objects-list{width:calc(100% - 60px);height:110px;margin:20px 30px}
 main .place .actions{position:absolute;width:calc(100% - 60px);bottom:0px;right:0px;margin:60px 30px 30px 30px;transition:1s}
 main .place .tours-list{position:absolute;margin-top:100%;transition:1s}
 main .place .tour{width:100%;margin:20px 0px}
-
 main .place.expand .content{margin-top:-100%}
 main .place.expand .actions{bottom:calc(100% - 87px)}
 main .place.expand .map-btn{margin-top:-100px}
 main .place.expand .adv-btn{margin-top:100px}
 main .tour .cost{width:105px;font-size:14px;margin-top:10px;padding:6px 10px;color:black;border:3px #72A383 solid;border-radius:16.5px}
-
 main .place.expand .tours-list{margin-top:10px}
-
 main .place .tours-list.scrollable{height:200px}
-
 main .bird:nth-child(1){width:70px;margin-left:10%}
 main .bird:nth-child(2){width:35px;margin-left:25%;margin-top:400px}
 main .bird:nth-child(3){width:20px;margin-left:20%;margin-top:450px}
 main .content+.bird{width:55px;margin-left:70%;margin-top:-100px}
+
+/* About page */
+main .section{width:50%;margin-bottom:100px}
+main .section .title{font-size:24px;color:#FCFAE4;margin-bottom:20px}
+main .section .description{}
+main .source  a{color:#FCFAE4;font-weight:100}
 
 .content{width: 100%;height: 100%;}
 
@@ -68,10 +71,14 @@ main .content+.bird{width:55px;margin-left:70%;margin-top:-100px}
 .map-btn{width:80px;transition:1s}
 .adv-btn{position:sticky;width:147px;top:30px;margin-top:10px;transition:1s}
 
-
 .scrollable{width:100%;overflow-x:hidden;overflow-y:scroll}
 .scrollable::-webkit-scrollbar{width:4px;height:auto}
 .scrollable::-webkit-scrollbar-thumb{background-color:rgba(0, 0, 0, .1);border:none;border-radius:2px;visibility:hidden}
 .scrollable:hover::-webkit-scrollbar-thumb{visibility:visible}
 
 footer img{width:100%}
+
+@media screen and (max-device-width:480px){
+    main .btn{width:calc(100% - 30px)}
+    main .bird:nth-child(3){margin-top:150px}
+}

@@ -1,4 +1,4 @@
-import places from './places.js'
+import places from './places-data.js'
 
 class Handler{
     getPlaces = (input) => {
@@ -12,9 +12,9 @@ class Handler{
 
         let inputs = inputObj.split(' ')
 
-        inputs.forEach(input => {
+        inputs.map(input => {
             input = input.toLowerCase()
-            places.forEach(place => {
+            places.map(place => {
                 if( String(place.name).toLowerCase().includes(input) || 
                     String(place.object_name).toLowerCase().includes(input) ||
                     String(place.type).toLowerCase().includes(input)){
@@ -22,14 +22,14 @@ class Handler{
                     return
                 }
 
-                place.objects?.forEach(object => {
+                place.objects?.map(object => {
                     if( String(object.name).toLowerCase().includes(input) ||
                         String(object.type).toLowerCase().includes(input)){
                         placesRes.add(place)
                         return
                     }
 
-                    object.tours?.forEach(tour => {
+                    object.tours?.map(tour => {
                         if( String(tour.name).toLowerCase().includes(input)) {
                             placesRes.add(place)
                             return

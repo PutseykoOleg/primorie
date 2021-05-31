@@ -5,24 +5,23 @@ import ReactDOM from 'react-dom'
 class Img extends React.Component{
     constructor(props){
         super(props)
+        this.state={classes:'bird hidden'}
         this.ref = React.createRef()
     }
 
     handleScroll = () => {
-        // let windowTop = $(window).scrollTop()
-        // let windowHeight = $(window).height()
-        // let elemTop = $('#'+this.props.id).offset().top
-        // let elemHeight = $('#'+this.props.id).outerHeight()
+        let windowTop = $(window).scrollTop()
+        let windowHeight = $(window).height()
+        let elemTop = $('#'+this.props.id).offset().top
+        let elemHeight = $('#'+this.props.id).outerHeight()
     
-        // if(windowTop + windowHeight >= elemTop && windowTop + windowHeight - elemHeight * 2 <= elemTop + windowHeight - elemHeight){
-        //     ReactDOM.findDOMNode(this).classList.remove('hidden')
-        //     ReactDOM.findDOMNode(this).classList.add('visible')
-        // } else {
-        //     ReactDOM.findDOMNode(this).classList.remove('visible')
-        //     ReactDOM.findDOMNode(this).classList.add('hidden')
-        // }
+        if(windowTop + windowHeight >= elemTop && windowTop + windowHeight - elemHeight * 2 <= elemTop + windowHeight - elemHeight){
+            this.setState({classes:'bird visible'})
+        } else {
+            this.setState({classes:'bird hidden'})
+        }
 
-        // this.forceUpdate()
+        this.forceUpdate()
     }
 
     componentDidMount(){
@@ -31,7 +30,7 @@ class Img extends React.Component{
     componentWillUnmount(){}
 
     render(){
-        return <img src={this.props.src} ref={this.ref} id={this.props.id} className="bird"/>
+        return <img src={this.props.src} ref={this.ref} id={this.props.id} className={this.state.classes}/>
     }
 }
 

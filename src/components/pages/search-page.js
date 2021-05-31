@@ -63,9 +63,11 @@ class SearchPage extends React.Component {
                     <Img src={bird_2} id="bird_2"/>
                     <Img src={bird_3} id="bird_3"/>
                     <div id="content" className="content content-ha-center">
-                        <input type="text" id="search-input" className="input search" onChange={this.handleChange_Search} autoComplete="off"/>
-                        <img src={settings} id="settings-img" className="settings-img" onClick={this.handleClick_Settings}></img>
-                        <input type="text" placeholder="max price" id="settings-input" className="input settings" onChange={this.handleChange_Settings} maxLength="5" autoComplete="off"/>
+                        <div className="row inputs">
+                            <input type="text" id="search-input" className="input search" onChange={this.handleChange_Search} autoComplete="off"/>
+                            <input type="text" placeholder="max price" id="settings-input" className="input settings" onChange={this.handleChange_Settings} maxLength="5" autoComplete="off"/>
+                            <img src={settings} id="settings-img" className="settings-img" onClick={this.handleClick_Settings}></img>
+                        </div>
                         <PlacesList places={this.state.foundPlaces}></PlacesList>
                     </div>
                     <Img src={bird_4} id="bird_4"/>
